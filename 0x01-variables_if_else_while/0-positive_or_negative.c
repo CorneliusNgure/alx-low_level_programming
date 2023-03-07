@@ -4,7 +4,7 @@
 
 /**
  * main - Printing whether variable returns number zero, negative or positive.
- *
+ * Return: always (Success)
  *
  */
 
