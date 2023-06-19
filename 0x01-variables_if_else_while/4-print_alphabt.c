@@ -10,7 +10,7 @@ int main(void)
 {
 	int alphabet = 'a';
 
-	while (alphabet < 'z')
+	while (alphabet <= 'z')
 	{
 		if (alphabet == 'e')
 		{
