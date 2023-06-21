@@ -1,7 +1,9 @@
 #include "main.h"
 
 /**
- * print_alphabet_x10(void) - prints the alphabets 10 times.
+ * print_alphabet_x10 - printing alphabets using _putchar.
+ *
+ * Description: Prints all alphabets in lowercase and adds a new line.
  *
  * Return: void
  */
