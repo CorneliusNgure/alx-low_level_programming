@@ -1,5 +1,7 @@
 #include <stdio.h>
+#include <string.h>
 #include "lists.h"
+
 
 /**
  * print_list - func to print all elements of a linked list
@@ -15,7 +17,7 @@ size_t print_list(const list_t *h)
 	while (h)
 	{
 		if (!h->str)
-			printf("(nil)\n");
+			printf("[0] (nil)\n");
 		else
 			printf("[%lu] %s\n", strlen(h->str), h->str);
 		h = h->next;
