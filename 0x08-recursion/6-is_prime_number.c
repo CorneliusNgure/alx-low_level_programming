@@ -27,7 +27,7 @@ int is_prime_number(int n)
 
 	if (n % 5 == 0)
 	{
-		return 0;
+		return (0);
 	}
 	return (1);
 }
