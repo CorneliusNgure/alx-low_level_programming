@@ -1,4 +1,6 @@
 #include "main.h"
+#include <stdlib.h>
+#include <stddef.h>
 
 /**
  * free_grid - frees the alloc_grid function.
