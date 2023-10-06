@@ -11,14 +11,17 @@
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int s1_length;
-	unsigned int s2_length;
+	unsigned int s1_length = 0;
+	unsigned int s2_length = 0;
 	unsigned int max_length;
 	char *joined_string;
+	unsigned int i;
 
-	s1_length = strlen(s1);
-	s2_length = strlen(s2);
+	while (s1[s1_length] != '\0')
+		s1_length++;
 
+	while (s2[s2_length] != '\0')
+		s2_length++;
 	if (s1 == NULL)
 	{
 		s1 = "";
@@ -29,7 +32,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 
 	max_length = (n >= s2_length) ? s2_length : n;
-
 	joined_string = malloc(s1_length + max_length + 1);
 
 	if (joined_string == NULL)
@@ -37,15 +39,15 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		return (NULL);
 	}
 
-	strcpy(joined_string, s1);
+	for (i = 0; i < s2_length; i++)
+	{
+		joined_string[i] = s1[i];
+	}
 
-	if (n < s2_length)
+	for (i = 0; i < max_length; i++)
 	{
-		strncat(joined_string, s2, n);
+		joined_string[s1_length + i] = s2[i];
 	}
-	else
-	{
-		strcat(joined_string, s2);
-	}
+	joined_string[s1_length + max_length] = '\0';
 	return (joined_string);
 }
