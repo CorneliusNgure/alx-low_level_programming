@@ -31,7 +31,7 @@ void print_all(const char * const format, ...)
 			case 'f':
 				printf("%s%f", separator, (float)va_arg(args, double));
 				break;
-			 case 's':
+			case 's':
 				{
 					str = va_arg(args, char *);
 
@@ -39,19 +39,16 @@ void print_all(const char * const format, ...)
 					{
 						str = "(nil)";
 					}
-					
+
 					printf("%s%s", separator, str);
 					break;
 				}
-			 
-			 default:
+			default:
 				break;
 		}
-		
 		separator = ", ";
 		i++;
 	}
-
 	printf("\n");
 	va_end(args);
 }
