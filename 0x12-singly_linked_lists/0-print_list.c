@@ -3,7 +3,7 @@
 
 /**
  * print_list - prints members of list_s struct.
- * @h: pointer to struct list_s
+ * @c: pointer to struct list_s
  *
  * Return: no. of nodes.
  */
