@@ -3,7 +3,7 @@
 
 /**
  * print_list - prints members of list_s struct.
- * @c: pointer to struct list_s
+ * @h: pointer to struct list_s
  *
  * Return: no. of nodes.
  */
@@ -23,8 +23,9 @@ size_t print_list(const list_t *h)
 		{
 			printf("[%u] %s\n", h->len, h->str);
 		}
-			count_nodes++;
-			h = h->next;
+
+		count_nodes++;
+		h = h->next;
 	}
 
 	return (count_nodes);
