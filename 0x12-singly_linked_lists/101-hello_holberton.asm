@@ -1,12 +1,16 @@
-section .data
-    hello db "Hello, Holberton",10,0
-
 section .text
-    global main
-
-extern printf
+	global main
 
 main:
-    mov rdi, hello
-    call printf
-    ret
+	mov	edx, len
+	mov	ecx, msg
+	mov 	ebx, 1
+	mov	eax, 4
+	int	0x80
+
+	mov	eax, 1
+	int	0x80
+
+section .data
+msg db 'Hello, Coding', 0xa
+len equ $ - msg
