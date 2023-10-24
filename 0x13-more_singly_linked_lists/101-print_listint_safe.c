@@ -18,10 +18,9 @@ size_t print_listint_safe(const listint_t *head)
 		for (i = 0; i < node_count; i++)
 		{
 			if (head == visited_nodes[i])
-			{
 				loop_found = 1;
-				break;
-			}
+			break;
+
 		}
 		if (loop_found)
 		{
@@ -32,10 +31,8 @@ size_t print_listint_safe(const listint_t *head)
 
 		new_visited_nodes = malloc((node_count + 1) * sizeof(listint_t *));
 		if (new_visited_nodes == NULL)
-		{
 			free(visited_nodes);
-			exit(98);
-		}
+		exit(98);
 		for (i = 0; i < node_count; i++)
 		{
 			new_visited_nodes[i] = visited_nodes[i];
@@ -46,6 +43,8 @@ size_t print_listint_safe(const listint_t *head)
 		node_count++;
 		head = head->next;
 	}
+	while (head != NULL)
+		printf("(%p), %d\n", (void *)head, head->n), head = head->next;
 	free(visited_nodes);
 	return (node_count);
 }
