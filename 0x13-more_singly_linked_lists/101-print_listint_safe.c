@@ -1,12 +1,11 @@
+#include <stdlib.h>
 #include "lists.h"
 #include <stdio.h>
 /**
- * print_listint_safe - prints listint_t struct.
- * @head: ptr to the struct.
- *
- * Return: no. of nodes in the list.
+ * print_listint_safe - prints a listint_t linked list safely.
+ * @head: a pointer to the head of the list.
+ * Return: the number of nodes in the list.
  */
-
 size_t print_listint_safe(const listint_t *head)
 {
 	size_t node_count = 0, i;
@@ -30,6 +29,7 @@ size_t print_listint_safe(const listint_t *head)
 			break;
 		}
 		printf("[%p] %d\n", (void *)head, head->n);
+
 		new_visited_nodes = malloc((node_count + 1) * sizeof(listint_t *));
 		if (new_visited_nodes == NULL)
 		{
