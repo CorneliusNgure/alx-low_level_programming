@@ -2,8 +2,8 @@
 
 CC = gcc
 CFLAGS = -Wall -Wextra -O2
-SRCS = main.c school.c
-OBJS = $(SRCS:.c=.o)
+SRC = main.c school.c
+OBJS = $(SRC:.c=.o)
 EXE = school
 
 all: $(EXE)
