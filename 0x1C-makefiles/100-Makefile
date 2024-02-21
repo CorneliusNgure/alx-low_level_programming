@@ -1,7 +1,9 @@
 CC = gcc
-SRC = main.c school.c
+SRC = $(wildcard *.c)
 OBJ = $(SRC:.c=.o)
 NAME = school
+RM := rm -f
+CFLAGS = -Wall -Werror -Wextra -pedantic
 
 # Default rule to build the executable
 all: $(NAME)
@@ -12,7 +14,7 @@ $(NAME): $(OBJ)
 
 # Rule to compile source files
 %.o: %.c m.h
-	$(CC) -Wall -Werror -Wextra -pedantic -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 # Rule to clean Emacs and Vim temporary files along with the executable
 clean:
