@@ -1,14 +1,14 @@
 CC = gcc
-CFLAGS = -Wall -Wextra -O2
+CFLAGS = -Wall -Wextra -Werror -pedantic
 SRC = main.c school.c
 OBJ = $(SRC:.c=.o)
 NAME = school
 
 all: $(NAME)
 $(NAME): $(OBJ)
-	$(CC) -$^ -o $@
+	$(CC) $^ -o $@
 
 %.o: %.c
 	$(CC) -c $< -o $@
 clean:
-	rm -f $(OBJS) $(NAME)
+	rm -f $(OBJS)
