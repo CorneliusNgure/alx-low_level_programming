@@ -1,3 +1,5 @@
+.PHONY: all
+
 CC = gcc
 CFLAGS = -Wall -Wextra -O2
 SRCS = main.c school.c
@@ -11,4 +13,3 @@ $(EXE): $(OBJS)
 	$(CC) $(CFLAGS) -c $< -o $@
 clean:
 	rm -f $(OBJS)
-
