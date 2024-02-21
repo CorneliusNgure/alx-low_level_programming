@@ -1,0 +1,15 @@
+.PHONY: all
+
+CC = gcc
+CFLAGS = -Wall -Wextra -O2
+SRC = main.c school.c
+OBJS = $(SRC:.c=.o)
+NAME = school
+
+all: $(NAME)
+$(EXE): $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+clean:
+	rm -f $(OBJS)
